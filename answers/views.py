@@ -1,9 +1,9 @@
 # coding=utf-8
 # from django.http import HttpResponse
-from .get_key import inaction,inscene,inask,getv,outbad
-from .scean import scenelib
-from .corpus_segment import CorpusSegement
-from .chatbot_integration import tmp_a
+from answers.get_key import inaction,inscene,inask,getv,outbad
+from answers.scean import scenelib
+from answers.corpus_segment import CorpusSegement
+from answers.chatbot_integration import tmp_a
 import codecs
 # from tupu.MatchOnline import Match
 seg=CorpusSegement()
@@ -16,12 +16,11 @@ def answer(line):
     ans='!'
     if len(line) > 0:
         line1 = line
-        line1 = line1.encode('utf-8')
-        # ab.predict(line1, result)
-        # print('&&&', line, '+', type(line))
+        # line1 = line1.encode('utf-8')
+        ab.predict(line1, result)
+        # print(result)
         line2 = ' '.join(seg.single_segment(line, hasOrigin=True))
         print(line2)
-        # print('***', line2)
         dl = line2.split('####')
         for sc in scenelib:
             if inscene(dl[0], sc):
@@ -42,4 +41,4 @@ def answer(line):
             ans = '\n'.join(result)
     return ans
 
-
+# print(answer('我还剩多少话费'))

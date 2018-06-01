@@ -142,12 +142,6 @@ def sdeal(sc, name='defaultresult'):
 
 
 if __name__ == '__main__':
-    # for i in range(len(scenelib)):
-    #     sdeal(scenelib[i],scenelibname[i])
-    # sdeal(jf,'jifenxingji')
     sdeal(wfsy, nm[wfsy])
-    # sdeal(aabbcc,'test')
-    # i=12
-    # sdeal(scenelib[i], scenelibname[i])
 
 
