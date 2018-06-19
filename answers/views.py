@@ -41,4 +41,4 @@ def answer(line):
             ans = '\n'.join(result)
     return ans
 
-# print(answer('我还剩多少话费'))
+print(answer('我现在是什么星级'))
